@@ -62,7 +62,7 @@ async function authenticateUser(email, password) {
         const userResult = await getUsers(email);
         if (userResult.recordset.length > 0) {
             const user = userResult.recordset[0];
-            const isPasswordValid = await bcrypt.compare(password, user.password);
+            const isPasswordValid = bcrypt.compare(password, user.password);
             if (isPasswordValid) {
                 const token = jwt.sign({ user_id: user.user_id }, JWT_SECRET, { expiresIn: '1h' });
                 return { token };
