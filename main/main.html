@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メイン画面</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>入出力確認</h1>
+    <h2><button id="logoutButton">ログアウト</button></h2>
+    <button id="openModalButton">現金入力</button>
+    <button id="openCategoryModalButton">カテゴリ入力</button>
+    <div id="totalAmount">合計金額: ¥0</div>
+
+    <table id="transactionTable">
+        <thead>
+            <tr>
+                <th>日時</th>
+                <th>内容</th>
+                <th>カテゴリ</th>
+                <th>金額</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!-- 現金入力モーダル -->
+    <div id="cashInputModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>現金入力</h2>
+            <form id="cashInputForm">
+                <label for="date">日時:</label>
+                <input type="date" id="date" name="date" required>
+                <br>
+                <label for="description">内容:</label>
+                <input type="text" id="description" name="description" required>
+                <br>
+                <label for="category">カテゴリ:</label>
+                <select id="category" name="category">
+                </select>
+                <br>
+                <label for="amount">金額:</label>
+                <input type="number" id="amount" name="amount" required>
+                <br>
+                <button type="submit">保存</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- カテゴリ入力モーダル -->
+    <div id="categoryInputModal" class="modal">
+        <div class="modal-content">
+            <span class="close-category-button">&times;</span>
+            <h2>カテゴリ入力</h2>
+            <form id="categoryInputForm">
+                <label for="categoryName">カテゴリ名:</label>
+                <input type="text" id="categoryName" name="categoryName" required>
+                <br>
+                <button type="submit">保存</button>
+            </form>
+            <div id="categoryListContainer">
+                <h3>カテゴリ一覧</h3>
+                <ul id="categoryList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 金額編集モーダル -->
+    <div id="editAmountModal" class="modal">
+        <div class="modal-content">
+            <span class="close-edit-button">&times;</span>
+            <h2>金額編集</h2>
+            <form id="editAmountForm">
+                <label for="editAmount">金額:</label>
+                <input type="number" id="editAmount" name="editAmount" required>
+                <br>
+                <label for="editDescription">内容:</label>
+                <input type="text" id="editDescription" name="editDescription" required>
+                <br>
+                <label for="editCategory">カテゴリ名:</label>
+                <select id="editCategory" name="category" required></select>
+                <br>
+                <button type="submit">更新</button>
+                <button type="button" id="deleteTransactionButton">削除</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

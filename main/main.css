@@ -1,0 +1,92 @@
+/* モーダルのスタイル */
+.modal {
+    display: none;
+    /* デフォルトでは非表示 */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-button,
+.close-category-button,
+.close-edit-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus,
+.close-category-button:hover,
+.close-category-button:focus,
+.close-edit-button:hover,
+.close-edit-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#transactionTable {
+    margin: 20 auto;
+    width: 40%;
+    /* 必要に応じて幅を調整 */
+}
+
+.date-row {
+    text-align: left;
+    font-weight: bold;
+}
+
+.transaction-data {
+    text-align: center;
+}
+
+/* カテゴリ一覧のスタイル */
+#categoryListContainer {
+    width: 40%;
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+#categoryList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#categoryList li {
+    margin-bottom: 10px;
+}
+
+/* カテゴリ入力モーダルのスタイル */
+.modal-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#totalAmount {
+    margin-left: 10px;
+    font-weight: bold;
+}

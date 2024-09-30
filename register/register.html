@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規ユーザー登録</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>新規ユーザー登録</h2>
+        <form id="registerForm">
+            <label for="newMail">メールアドレス:</label>
+            <input type="text" id="newMail" name="newMail" required>
+            <label for="newUsername">ユーザー名:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+            <label for="newPassword">パスワード:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+            <button type="submit">登録</button>
+            <button type="button" id="backButton">戻る</button>
+        </form>
+    </div>
+    <script src="register.js"></script>
+</body>
+
+</html>
